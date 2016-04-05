@@ -2,7 +2,6 @@ package at.address;
 
 import java.io.IOException;
 
-import at.address.model.Pessoa;
 import at.address.model.Pessoa.Person;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -64,33 +63,32 @@ public class Main extends Application {
         }
     }
 
-    private ObservableList<Person> pessoaData = FXCollections.observableArrayList();
+    private ObservableList<Person> personData = FXCollections.observableArrayList();
 
     /**
      * Construtor
-     * @param <Public>
-     * @param <Public>
      */
-     <Public> ObservableList<Person> Main(){
+    public Main() {
         // Add some sample data
-        pessoaData.add(new Person("Hans"));
-        pessoaData.add(new Person("Hans"));
-        pessoaData.add(new Person("Hans"));
-        pessoaData.add(new Person("Hans"));
-        pessoaData.add(new Person("Hans"));
-        pessoaData.add(new Person("Hans"));
-        pessoaData.add(new Person("Hans"));
-        
+        personData.add(new Person("Joao"));
+        personData.add(new Person("Ruth"));
+        personData.add(new Person("Heinz"));
+        personData.add(new Person("Cornelia"));
+        personData.add(new Person("Werner"));
+        personData.add(new Person("Lydia"));
+        personData.add(new Person("Anna"));
+        personData.add(new Person("Stefan"));
+        personData.add(new Person("Martin"));
+    }
 
     /**
      * Retorna os dados como uma observable list de Persons. 
      * @return
      */
-    ObservableList<Person> getpessoaData(){
-        return  pessoaData;
+    public ObservableList<Person> getPersonData() {
+        return personData;
     }
-   }
-
+ 
     
     public Stage getPrimaryStage() {
         return primaryStage;
