@@ -17,18 +17,12 @@ public class ControladorPessoa {
 	    private TableColumn<Person, String> NameColumn;
 
 	    @FXML
-	    private Label firstNameLabel;
+	    private Label IDLabel;
 	    @FXML
-	    private Label lastNameLabel;
+	    private Label NameLabel;
 	    @FXML
-	    private Label streetLabel;
-	    @FXML
-	    private Label postalCodeLabel;
-	    @FXML
-	    private Label cityLabel;
-	    @FXML
-	    private Label birthdayLabel;
-
+	    private Label PhoneLabel;
+	   
 	    // Reference to the main application.
 	    private Main main;
 
