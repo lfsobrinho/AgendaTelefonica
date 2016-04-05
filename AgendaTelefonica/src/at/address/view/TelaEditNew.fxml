@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<HBox xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<HBox xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.address.view.ControllerTelaEditNew">
    <children>
       <AnchorPane prefHeight="271.0" prefWidth="348.0">
          <children>
@@ -28,15 +27,15 @@
                   <Label text="ID" />
                   <Label text="Nome" GridPane.rowIndex="1" />
                   <Label text="Telefone" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="IDField" GridPane.columnIndex="1" />
+                  <TextField fx:id="NameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="PhoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <HBox layoutX="194.0" layoutY="225.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="OK" />
-                  <Button mnemonicParsing="false" text="Cancel" />
+                  <Button mnemonicParsing="false" onAction="#handleOk" text="OK" />
+                  <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
                </children>
             </HBox>
          </children>

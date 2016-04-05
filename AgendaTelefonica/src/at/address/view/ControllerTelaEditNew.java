@@ -1,15 +1,21 @@
 package at.address.view;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import java.io.IOException;
 
+import at.address.Main;
+import at.address.model.Person;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-
-import at.address.model.Person;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class ControllerTelaEditNew {
+	@FXML
+	private TableView<Person> personTable;
 
 	@FXML
 	private TextField IDField;
@@ -35,6 +41,8 @@ public class ControllerTelaEditNew {
 	 * 
 	 * @param dialogStage
 	 */
+	
+	
 	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
 	}
@@ -115,4 +123,18 @@ public class ControllerTelaEditNew {
 			return false;
 		}
 	}
+	
+	@FXML
+	private void handleNewPerson() {
+	    Person tempPerson = new Person(null, null, null);
+	    boolean okClicked = Main.showPersonEditDialog(tempPerson);
+	    if (okClicked) {
+	        Main.getPersonData().add(tempPerson);
+	    }
+	}
+
+	/**
+	 * Chamado quando o usuário clica no botão edit. Abre a janela para editar
+	 * detalhes da pessoa selecionada.
+	 */
 }

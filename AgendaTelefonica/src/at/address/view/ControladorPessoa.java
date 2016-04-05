@@ -96,5 +96,24 @@ public class ControladorPessoa {
 	            
 	        }
 	    }
+	    
+	    @FXML
+		private void handleEditPerson() {
+			Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+		    if (selectedPerson != null) {
+		        boolean okClicked = Main.showPersonEditDialog(selectedPerson);
+		        if (okClicked) {
+		            showPersonDetails(selectedPerson);
+		        }
+
+		    } else {
+		        // Nada seleciondo.
+		        Alert alert = new Alert(AlertType.WARNING);
+		            alert.setTitle("Nenhuma seleção");
+		            alert.setHeaderText("Nenhuma Pessoa Selecionada");
+		            alert.setContentText("Por favor, selecione uma pessoa na tabela.");
+		            alert.showAndWait();
+		    }
+		}
 	}
 

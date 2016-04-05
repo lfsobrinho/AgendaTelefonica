@@ -9,11 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;	
-	/**
-	 * Classe Model para uma Person (pessoa).
-	 *
-	 * @author Marco Jakob
-	 */
+	
 	public class Person {
 
 	    private final StringProperty Name;
@@ -69,5 +65,12 @@ import javafx.beans.property.StringProperty;
 	    public IntegerProperty IDProperty() {
 	        return ID;
 	    }
+
+		public static Object getSelectionModel() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+	
 	}
 
