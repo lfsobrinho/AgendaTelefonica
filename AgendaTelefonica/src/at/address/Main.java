@@ -3,6 +3,7 @@ package at.address;
 import java.io.IOException;
 
 import at.address.model.Person;
+import at.address.view.ControladorPessoa;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -69,6 +70,11 @@ public class Main extends Application {
 
             // Define o person overview dentro do root layout.
             rootLayout.setCenter(personOverview);
+            
+            // Dá ao controlador acesso à the main app.
+            ControladorPessoa controller = loader.getController();
+            controller.setMainApp(this);
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
