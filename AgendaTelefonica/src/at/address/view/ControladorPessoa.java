@@ -22,6 +22,12 @@ public class ControladorPessoa {
 	    private Label NameLabel;
 	    @FXML
 	    private Label PhoneLabel;
+	    
+	    @FXML
+	    private void handleDeletePerson() {
+	        int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+	        personTable.getItems().remove(selectedIndex);
+	    }
 	   
 	    // Reference to the main application.
 	    private Main main;
