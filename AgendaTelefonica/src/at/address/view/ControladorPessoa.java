@@ -42,18 +42,39 @@ public class ControladorPessoa {
 	        // Inicializa a tablea de pessoa com duas colunas.
 	        idColumn.setCellValueFactory(cellData -> cellData.getValue().IDProperty().asObject());
 	        NameColumn.setCellValueFactory(cellData -> cellData.getValue().NameProperty());
+	        
+	        // Limpa os detalhes da pessoa.
+	        showPersonDetails(null);
+
+	        // Detecta mudanças de seleção e mostra os detalhes da pessoa quando houver mudança.
+	        personTable.getSelectionModel().selectedItemProperty().addListener(
+	                (observable, oldValue, newValue) -> showPersonDetails(newValue));
 	    }
 
-	    /**
-	     * É chamado pela aplicação principal para dar uma referência de volta a si mesmo.
-	     * 
-	     * @param mainApp
-	     */
+	   
 	    public void setMainApp(Main main) {
 	        this.main = main;
 
 	        // Adiciona os dados da observable list na tabela
 	        personTable.setItems(main.getPersonData());
+	    }
+	    
+	    private void showPersonDetails(Person person) {
+	        if (person != null) {
+	            // Preenche as labels com informações do objeto person.
+	        	IDLabel.setText(Integer.toString(person.getID()));
+	            NameLabel.setText(person.getName());
+	            PhoneLabel.setText(person.getPhone());
+
+	            // TODO: Nós precisamos de uma maneira de converter o aniversário em um String! 
+	            // birthdayLabel.setText(...);
+	        } else {
+	            // Person é null, remove todo o texto.
+	            IDLabel.setText("");
+	            NameLabel.setText("");
+	            PhoneLabel.setText("");
+	            
+	        }
 	    }
 	}
 
