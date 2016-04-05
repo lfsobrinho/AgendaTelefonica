@@ -40,7 +40,7 @@
                      <children>
                         <Button mnemonicParsing="false" text="NOVO" />
                         <Button mnemonicParsing="false" text="EDITAR" />
-                        <Button mnemonicParsing="false" text="APAGAR" />
+                        <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="APAGAR" />
                      </children>
                   </HBox>
                </children>
