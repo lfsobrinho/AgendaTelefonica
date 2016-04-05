@@ -68,7 +68,7 @@ public class ControllerTelaEditNew {
 	@FXML
 	private void handleOk() {
 		if (isInputValid()) {
-			person.setID(IDField.getText());
+			person.setID(Integer.parseInt(IDField.getText()));
 			person.setName(NameField.getText());
 			person.setPhone(PhoneField.getText());
 
@@ -93,7 +93,7 @@ public class ControllerTelaEditNew {
 	private boolean isInputValid() {
 		String errorMessage = "";
 
-		if (IDField.getText() == null || ID.getText().length() == 0) {
+		if (IDField.getText() == null || IDField.getText().length() == 0) {
 			errorMessage += "ID inválido!\n";
 		}
 		if (NameField.getText() == null || NameField.getText().length() == 0) {
