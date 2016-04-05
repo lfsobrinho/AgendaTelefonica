@@ -68,7 +68,7 @@ public class Main extends Application {
         	    try {
         	        // Carrega a person overview.
         	        FXMLLoader loader = new FXMLLoader();
-        	        loader.setLocation(Main.class.getResource("view/PersonOverview.fxml"));
+        	        loader.setLocation(Main.class.getResource("view/Tela1.fxml"));
         	        AnchorPane Tela1 = (AnchorPane) loader.load();
 
         	        // Define a person overview no centro do root layout.
