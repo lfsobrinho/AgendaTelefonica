@@ -8,11 +8,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
-public class Pessoa {
-	
-
+import javafx.beans.property.StringProperty;	
 	/**
 	 * Classe Model para uma Person (pessoa).
 	 *
@@ -22,23 +18,19 @@ public class Pessoa {
 
 	    private final StringProperty Name;
 	    private final IntegerProperty ID;
-	    private final IntegerProperty Phone;
+	    private final StringProperty Phone;
 	    
 	    /**
 	     *  Construtor padrão.
 	     */
-	    public Person() {
-	        this(null);
-	    }
-
-	    
-	    public Person(String Name) {
+  
+	    public Person(Integer ID ,String Name,String Phone) {
 	        this.Name = new SimpleStringProperty(Name);
 	      
 
 	        // Alguns dados de exemplo, apenas para testes.
-	        this.ID = new SimpleIntegerProperty(1001);
-	        this.Phone = new SimpleIntegerProperty(1234);
+	        this.ID = new SimpleIntegerProperty(ID);
+	        this.Phone = new SimpleStringProperty(Phone);
 	       
 	    }
 
@@ -54,15 +46,15 @@ public class Pessoa {
 	        return Name;
 	    }
 
-	    public int getPhone() {
+	    public String getPhone() {
 	        return Phone.get();
 	    }
 
-	    public void setPhone(int Phone) {
+	    public void setPhone(String Phone) {
 	        this.Phone.set(Phone);
 	    }
 
-	    public IntegerProperty PhoneProperty() {
+	    public StringProperty PhoneProperty() {
 	        return Phone;
 	    }
 	    
@@ -78,4 +70,4 @@ public class Pessoa {
 	        return ID;
 	    }
 	}
-}
+
